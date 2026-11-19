@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heladeria</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="module">
+        import React from "https://esm.sh/react@19.2.0?dev";
+        import {createRoot} from "https://esm.sh/react-dom@19.2.0/client?dev";
+        const itemName = React.createElement("h2", null, "Mora silvestre");
+        const itemDescription = React.createElement(
+            "p",
+            { className: "menu-item-description" },
+            "Mora de Ambato con un toque de limón."
+        );
+        const menuItem = React.createElement(
+            "article",
+            { className: "menu-item" },
+            itemName,
+            itemDescription
+        );
+
+        const itemName2 = React.createElement("h2", null, "Galleta Oreo");
+
+        const itemDescription2 = React.createElement(
+            "p",
+            { className: "menu-item-description" },
+            "Helado de vainilla con trozos de galleta Oreo."
+        );
+
+        const menuItem2 = React.createElement(
+            "article",
+            { className: "menu-item" },
+            itemName2,
+            itemDescription2
+        );
+        const heading = React.createElement("h1", null, "La Heladeria");
+       const menu = React.createElement("main", null, heading, menuItem, menuItem2);
+        
+        const container = document.getElementById("root");
+        createRoot(container).render(menu);
+    </script>   
+</body>
+</html>
